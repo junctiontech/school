@@ -242,7 +242,7 @@ include("Template/Sidebar.php");
 						$EnquiryResponse=$row['MasterEntryValue'];
 						$Tag="<b>$EnquiryResponse</b>";
 						$Date=date("d M Y, D h:i a",$row['EnquiryDate']);
-						$Edit="<a href=/Enquiry/Update/$EnquiryId><span class=\"icon-edit tip\" title=\"Update\"></span></a>";
+						$Edit="<a href=Enquiry/Update/$EnquiryId><span class=\"icon-edit tip\" title=\"Update\"></span></a>";
 						$ActionConfirmMessage="Are you sure want to delete?";
 						$ActionConfirm=ActionConfirm($ActionConfirmMessage);
 						$Delete="<a href=Enquiry/Delete/$EnquiryId><span class=\"icomoon-icon-cancel tip\" title=\"Delete\"></span></a>";

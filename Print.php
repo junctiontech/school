@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 $PageName="Print";
 include("Include.php");
 echo "<title>$APPLICATIONNAME</title>"
@@ -72,6 +72,6 @@ echo "<p style=\"text-align:right; margin-right:50px; font-weight:bold; font-siz
 echo "</div>";
 unset($_SESSION[$SessionName]);
 unset($_SESSION[$HeadingName]);
-unset($_SESSION[$PrintOption]);
+//unset($_SESSION[$PrintOption]);
 }
 ?>

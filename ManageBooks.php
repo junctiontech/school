@@ -116,6 +116,7 @@ include("Template/Sidebar.php");
 				
 				$query5="select BookId,Count(ListBookId) as TotalBook from listbook where ListBookStatus='Active' group by BookId ";
 				$check5=mysqli_query($CONNECTION,$query5);
+				$CountBookIdArray='';
 				while($row5=mysqli_fetch_array($check5))
 				{
 					$CountBookIdArray[]=$row5['BookId'];

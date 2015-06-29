@@ -123,7 +123,7 @@ include("Template/Sidebar.php");
 							$ReturnRemarks=$row4['Remarks'];
 							$NotReturnedBooks=array_diff($ReturnBooks,$ReturnBookId);
 							foreach($NotReturnedBooks as $NotReturnedBooksValue)
-							{
+							{	$NotReturnedBookList='';
 								$NotReturnSearchIndex=array_search($NotReturnedBooksValue,$BookListBookIdArray);
 								$NotReturnBookName=$BookNameArray[$NotReturnSearchIndex];
 								$NotReturnBookAuthorName=$BookAuthorNameArray[$NotReturnSearchIndex];

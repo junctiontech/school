@@ -94,8 +94,9 @@ if($UniqueId!="" && ($Action=="UpdateRoute" || $Action=="DeleteRoute" || $Action
 	
 	$query40="select Students,VehicleRouteId,RouteStoppageId from vehicleroutedetail where VehicleRouteDetailStatus='Active' ";
 	$check40=mysqli_query($CONNECTION,$query40);
+	$BothArray='';
 	while($row40=mysqli_fetch_array($check40))
-	{
+	{ 
 		$StudentInRouteArray[]=count(explode(",",$row40['Students']));
 		$VehicleRouteIdInRouteArray[]=$row40['VehicleRouteId'];
 		$RouteStoppageIdInRouteArray[]=$row40['RouteStoppageId'];
@@ -224,6 +225,9 @@ if($count1>0 && $Action=="ViewRoute")
 	$DATA2=array();
 	$QA2=array();
 	$PrintTable2Data="";
+	$StudentsInTransportRoute='';
+	$RegistrationIdArray='';
+	$SavedRouteStoppageIdArray='';
 	while($row5=mysqli_fetch_array($check5))
 	{
 		$TableListVehicleRouteDetailId=$row5['VehicleRouteDetailId'];
@@ -234,6 +238,7 @@ if($count1>0 && $Action=="ViewRoute")
 		$TableListDOE=date("d M Y, h:ia",$row5['DOE']);
 		$TableListStudentArray=explode(",",$TableListStudent);
 		$StudentDetail="";
+		
 		foreach($TableListStudentArray as $TableListStudent)
 		{
 			foreach($RegistrationIdArray as $RegistrationIdValues)
@@ -258,7 +263,8 @@ if($count1>0 && $Action=="ViewRoute")
 	fclose($fp);
 	
 	$CountStudentsInTransportRoute=count($StudentsInTransportRoute);
-	if($CountStudentsInTransportRoute>0)
+	
+	if($CountStudentsInTransportRoute>1)
 	$StudentListArray = array_diff($RegistrationIdArray, $StudentsInTransportRoute);
 	else
 	$StudentListArray=$RegistrationIdArray;

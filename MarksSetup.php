@@ -98,6 +98,7 @@ include("Template/Sidebar.php");
 						order by ExamActivityName";
 					$check=mysqli_query($CONNECTION,$query);
 					$count=mysqli_num_rows($check);
+					$ExamDetailIdArray='';
 					while($row=mysqli_fetch_array($check))
 					{
 						$ExamActivityName=$row['ExamActivityName'];
@@ -132,31 +133,39 @@ include("Template/Sidebar.php");
 						studentfee.SectionId='$SectionId' order by StudentName";
 					$check2=mysqli_query($CONNECTION,$query2);
 					$TabIndex=10;
+					
 					while($row2=mysqli_fetch_array($check2))
-					{
+					{ 
 						$TotalObtainedMarks=0;
 						$RegistrationId=$row2['RegistrationId'];
 						$StudentName=$row2['StudentName'];
 						$Mobile=$row2['Mobile'];
 						$TableData.="<tr><td>$StudentName <br> $Mobile</td>";
 						$PrintData.="<tr><td>$StudentName <br> $Mobile</td>";
+						
 						if($ExamDetailIdArray!="")
-						{
+						{	
 							foreach($ExamDetailIdArray as $ExamDetailIdArrayValues)
 							{
 								$ArrayIndex=array_search($ExamDetailIdArrayValues,$ExamDetailIdArray);
 								$MM=$ExamActivityMMArray[$ArrayIndex];
 								$StudentMarks=$Marks[$ArrayIndex];
+								
 								$StudentMarks=explode(",",$StudentMarks);
+								
 								foreach($StudentMarks as $StudentMarksValues)
 								{
 									$StudentMarksValuesArray=explode("-",$StudentMarksValues);
-									unset($FinalMarks);
+								
+									$FinalMarks='';
+									
 									if($StudentMarksValuesArray[0]==$RegistrationId)
-									{
+									{		unset($FinalMarks);
 										$FinalMarks=$StudentMarksValuesArray[1];
+										
 										break;
 									}
+									
 								}
 								$TotalObtainedMarks+=$FinalMarks;
 								$FieldName="Field_".$RegistrationId."_".$ExamDetailIdArrayValues;

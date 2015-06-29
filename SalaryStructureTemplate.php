@@ -121,7 +121,7 @@ while($row2=mysqli_fetch_array($check2))
 	{
 		$ListSalaryStructureName=$row['SalaryStructureName'];	
 		$ListSalaryStructureId=$row['SalaryStructureId'];	
-		$ListSalaryStructureName="<a href=/SalaryStructureTemplate/View/$ListSalaryStructureId>$ListSalaryStructureName</a>";
+		$ListSalaryStructureName="<a href=SalaryStructureTemplate/View/$ListSalaryStructureId>$ListSalaryStructureName</a>";
 		$ListSalaryStructureStatus=$row['SalaryStructureStatus'];	
 		$List="";
 		if($ListSalaryStructureStatus=="Active")

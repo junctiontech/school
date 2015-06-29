@@ -79,6 +79,7 @@ include("Template/Sidebar.php");
 					class.ClassStatus='Active' and
 					class.Session='$CURRENTSESSION' order by ClassName";
 				$ListAllClass="";
+				
 				$check31=mysqli_query($CONNECTION,$query31);
 				while($row31=mysqli_fetch_array($check31))
 				{
@@ -92,7 +93,7 @@ include("Template/Sidebar.php");
 				
 				<?php
 				function Purchase($Token,$MaterialType,$ListAllClass,$TOKEN)
-				{
+				{ 
 				?>
 					<div class="box chart gradient">
 						<div class="title">
@@ -185,7 +186,7 @@ include("Template/Sidebar.php");
 				}
 				
 				function CancelPurchase($Token,$MaterialType)
-				{
+				{ 
 				?>
 					<div class="box chart gradient">
 						<div class="title">

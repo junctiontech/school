@@ -50,6 +50,11 @@ include("Template/Sidebar.php");
 
 				$Action=$_GET['Action'];
 				$UniqueId=$_GET['UniqueId'];
+				$ExamDetailButtonContentSet='';
+				$SelectExamActivityType='';
+				$SelectExamActivityName='';
+				$SelectMaximumMarks='';
+				$count3='';
 				if($UniqueId!="" && ($Action=="UpdateExamSetup" || $Action=="ExamSetup"))
 				{
 					$query3="select * from examdetail where ExamDetailId='$UniqueId' and ExamDetailStatus='Active' ";
@@ -75,6 +80,8 @@ include("Template/Sidebar.php");
 				}
 				$query1="select SubjectId,SubjectName,SubjectAbb,Class from subject where Session='$CURRENTSESSION' ";
 				$check1=mysqli_query($CONNECTION,$query1);
+				$SelectSubjectId='';
+				
 				while($row1=mysqli_fetch_array($check1))
 				{
 					$SubjectId=$row1['SubjectId'];
@@ -90,6 +97,7 @@ include("Template/Sidebar.php");
 						$Selected="selected";
 						else
 						$Selected="";
+						$ListAllSubjectForSelectedClass='';
 						$ListAllSubjectForSelectedClass.="<option value=$SubjectId $Selected>$SubjectName</option>";
 					}
 				}

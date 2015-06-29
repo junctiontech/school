@@ -35,6 +35,7 @@ include("Template/Sidebar.php");
 					$ComboCurrentClassName=$row3['ClassName'];
 					$ComboCurrentSectionName=$row3['SectionName'];
 					$ComboCurrentSectionId=$row3['SectionId'];
+					$ValidSectionId='';
 					if($SectionId==$ComboCurrentSectionId)
 					{
 						$SelectedClass="selected";
@@ -42,6 +43,7 @@ include("Template/Sidebar.php");
 					}
 					else
 					$SelectedClass="";
+					$ListAllClass='';
 					$ListAllClass.="<option value=\"$ComboCurrentSectionId\" $SelectedClass>$ComboCurrentClassName $ComboCurrentSectionName</option>";
 				}
 				

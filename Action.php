@@ -2,6 +2,7 @@
 include("Include.php");
 IsLoggedIn();
 $Action=$_POST['Action'];
+
 $RandomNumber=$_POST['RandomNumber'];
 if($Action=="")
 header("Location:LogIn");

@@ -23,6 +23,7 @@ include("Template/Sidebar.php");
 				<?php DisplayNotification(); ?>
 				<?php
 				$Action=isset($_GET['Action']) ? $_GET['Action'] : '';
+				
 				$Id=isset($_GET['VisitorBookId']) ? $_GET['VisitorBookId'] : '';
 				$ButtonContentSet=$ButtonContent=$AddButton=$UpdateId=$Name=$Purpose=$Mobile=$InDateTime=$NoOfPeople=$Description=$DOC=$OutDateTime=$count1="";
 				if($Id!="")
@@ -54,6 +55,7 @@ include("Template/Sidebar.php");
 				}
 				if($ButtonContentSet!=1)
 				{
+					
 					$ButtonContent="Add";
 					$AddButton="Add Visitors";
 				}
@@ -302,7 +304,7 @@ include("Template/Sidebar.php");
 				},
 				NoOfPeople: {
 					required: true,
-					remote: "/RemoteValidation?Action=IsAmountWithoutZero&Id=NoOfPeople"
+					remote: "RemoteValidation?Action=IsAmountWithoutZero&Id=NoOfPeople"
 				}
 			},
 			messages: {

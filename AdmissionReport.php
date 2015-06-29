@@ -128,7 +128,7 @@ include("Template/Sidebar.php");
                                 <a href="#" class="minimize">Minimize</a>
                             </div>
                             <div class="content" style="padding:5px;">
-								<form class="form-horizontal" action="/ReportAction" name="AdmissionReport" id="AdmissionReport" method="Post">
+								<form class="form-horizontal" action="ReportAction" name="AdmissionReport" id="AdmissionReport" method="Post">
 									<div class="form-row row-fluid">
 										<div class="span12">
 											<div class="row-fluid">
